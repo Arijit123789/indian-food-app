@@ -5,61 +5,17 @@ from modules.model import preprocess_features, train_classifier, recommend_dishe
 import os
 import pandas as pd
 
-# --- Page Configuration (Sets a professional theme) ---
+# --- Page Configuration (Simplified) ---
 st.set_page_config(
     page_title="Indian Food Recommender",
     page_icon="🍲",
     layout="wide",
-    initial_sidebar_state="expanded",
-    theme="light"  # <-- THIS IS THE FIX
+    initial_sidebar_state="expanded"
 )
 
 # --- File Path (Same as before) ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, 'data', 'indian_food.csv')
-
-# --- Custom CSS (To make it look awesome) ---
-st.markdown("""
-<style>
-    /* Main app background */
-    .main {
-        background-color: #f5f5f5;
-    }
-    
-    /* Title style */
-    .stTitle {
-        font-weight: bold;
-        color: #FF4B4B; /* Streamlit's red */
-    }
-
-    /* Container styles */
-    .st-emotion-cache-z5fcl4 { /* This is a common class for containers */
-        background-color: #FFFFFF;
-        border: 1px solid #E0E0E0;
-        border-radius: 10px;
-        padding: 20px !important;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    /* Button style */
-    .stButton > button {
-        background-color: #FF4B4B;
-        color: white;
-        border-radius: 5px;
-        border: none;
-    }
-    .stButton > button:hover {
-        background-color: #E03C3C;
-        color: white;
-    }
-
-    /* Sidebar style */
-    [data-testid="stSidebar"] {
-        background-color: #FFF;
-    }
-</style>
-""", unsafe_allow_html=True)
-
 
 # --- Data Loading (Cached for performance) ---
 @st.cache_data
@@ -80,7 +36,7 @@ df, X, vectorizer = load_and_preprocess_data(DATA_PATH)
 # --- SIDEBAR: Navigation ---
 # ==================================================================================
 with st.sidebar:
-    st.image("https://i.imgur.com/H1F10H4.png", width=100) # A placeholder logo
+    # st.image("https://i.imgur.com/H1F10H4.png", width=100) # Placeholder logo
     st.title("🍲 Indian Food App")
     
     st.markdown("---")
