@@ -10,7 +10,8 @@ st.set_page_config(
     page_title="Indian Food Recommender",
     page_icon="🍲",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
+    theme="light"  # <-- THIS IS THE FIX
 )
 
 # --- File Path (Same as before) ---
