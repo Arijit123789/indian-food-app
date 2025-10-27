@@ -9,7 +9,7 @@ import os
 # Build a path relative to the current script file (app.py)
 # This is much more reliable on platforms like Vercel
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, 'data', 'IndianFood.csv')
+DATA_PATH = os.path.join(BASE_DIR, 'data', 'indian_food.csv')
 
 # --- Corrections End Here ---
 
